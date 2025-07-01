@@ -85,7 +85,7 @@ class _PesananAdminPageState extends State<PesananAdminPage> {
         fetchPesanan();
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Gagal mengubah status pesanan')),
+          const SnackBar(content: Text('Gagal mengubah status pesanan')),
         );
       }
     } catch (e) {
@@ -110,22 +110,22 @@ class _PesananAdminPageState extends State<PesananAdminPage> {
         children: [
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
             ),
           ),
           if (showBadge && pesananList.isNotEmpty)
             Container(
-              margin: EdgeInsets.only(left: 8),
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+              margin: const EdgeInsets.only(left: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
               decoration: BoxDecoration(
                 color: Colors.red,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
                 '${pesananList.length}',
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 12,
                 ),
@@ -136,7 +136,7 @@ class _PesananAdminPageState extends State<PesananAdminPage> {
       children: pesananList.isEmpty
           ? [
               Padding(
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 child: Text(
                   'Belum ada pesanan',
                   style: TextStyle(color: Colors.grey[400]),
@@ -145,12 +145,12 @@ class _PesananAdminPageState extends State<PesananAdminPage> {
             ]
           : pesananList.map<Widget>((pesanan) {
               return Card(
-                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 color: Colors.grey[900],
                 child: ListTile(
                   title: Text(
                     pesanan['nama_pelanggan'] ?? 'Pelanggan',
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
@@ -178,15 +178,15 @@ class _PesananAdminPageState extends State<PesananAdminPage> {
                       updatePesananStatus(pesanan['id'], status);
                     },
                     itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                      PopupMenuItem<String>(
+                      const PopupMenuItem<String>(
                         value: 'diproses',
                         child: Text('Proses Pesanan', style: TextStyle(color: Colors.white)),
                       ),
-                      PopupMenuItem<String>(
+                      const PopupMenuItem<String>(
                         value: 'dikirim',
                         child: Text('Kirim Pesanan', style: TextStyle(color: Colors.white)),
                       ),
-                      PopupMenuItem<String>(
+                      const PopupMenuItem<String>(
                         value: 'selesai',
                         child: Text('Selesaikan Pesanan', style: TextStyle(color: Colors.white)),
                       ),
@@ -218,20 +218,20 @@ class _PesananAdminPageState extends State<PesananAdminPage> {
               color: Colors.red[400],
               size: 60,
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               errorMessage!,
               style: TextStyle(color: Colors.red[400]),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.amber[400],
                 foregroundColor: Colors.black,
               ),
               onPressed: fetchPesanan,
-              child: Text('Coba Lagi'),
+              child: const Text('Coba Lagi'),
             ),
           ],
         ),

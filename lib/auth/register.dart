@@ -127,9 +127,9 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1A1A1A),
+      backgroundColor: const Color(0xFF1A1A1A),
       appBar: AppBar(
-        backgroundColor: Color(0xFF2D2D2D),
+        backgroundColor: const Color(0xFF2D2D2D),
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.amber[400]),
@@ -169,7 +169,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Nama Lengkap',
                       style: TextStyle(
                         fontSize: 14,
@@ -180,7 +180,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     const SizedBox(height: 8),
                     TextFormField(
                       controller: nameController,
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         hintText: 'Masukkan nama lengkap',
                         hintStyle: TextStyle(color: Colors.grey[400]),
@@ -205,7 +205,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    Text(
+                    const Text(
                       'Email',
                       style: TextStyle(
                         fontSize: 14,
@@ -216,7 +216,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     const SizedBox(height: 8),
                     TextFormField(
                       controller: emailController,
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         hintText: 'Masukkan email',
                         hintStyle: TextStyle(color: Colors.grey[400]),
@@ -242,7 +242,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       keyboardType: TextInputType.emailAddress,
                     ),
                     const SizedBox(height: 16),
-                    Text(
+                    const Text(
                       'Password',
                       style: TextStyle(
                         fontSize: 14,
@@ -253,7 +253,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     const SizedBox(height: 8),
                     TextFormField(
                       controller: passwordController,
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         hintText: 'Masukkan password',
                         hintStyle: TextStyle(color: Colors.grey[400]),
@@ -279,7 +279,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       obscureText: true,
                     ),
                     const SizedBox(height: 16),
-                    Text(
+                    const Text(
                       'Konfirmasi Password',
                       style: TextStyle(
                         fontSize: 14,
@@ -290,7 +290,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     const SizedBox(height: 8),
                     TextFormField(
                       controller: confirmPasswordController,
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         hintText: 'Masukkan ulang password',
                         hintStyle: TextStyle(color: Colors.grey[400]),

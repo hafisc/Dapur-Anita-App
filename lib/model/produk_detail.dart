@@ -20,28 +20,28 @@ class _SuccessDialogState extends State<SuccessDialog> with SingleTickerProvider
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: Duration(milliseconds: 800),
+      duration: const Duration(milliseconds: 800),
       vsync: this,
     );
 
     _scaleAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(0.0, 0.5, curve: Curves.easeOut),
+        curve: const Interval(0.0, 0.5, curve: Curves.easeOut),
       ),
     );
 
     _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(0.4, 0.8, curve: Curves.easeIn),
+        curve: const Interval(0.4, 0.8, curve: Curves.easeIn),
       ),
     );
 
     _checkAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(0.6, 1.0, curve: Curves.elasticOut),
+        curve: const Interval(0.6, 1.0, curve: Curves.elasticOut),
       ),
     );
 
@@ -64,9 +64,9 @@ class _SuccessDialogState extends State<SuccessDialog> with SingleTickerProvider
           return Transform.scale(
             scale: _scaleAnimation.value,
             child: Container(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: Color(0xFF2D2D2D),
+                color: const Color(0xFF2D2D2D),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Column(
@@ -82,7 +82,7 @@ class _SuccessDialogState extends State<SuccessDialog> with SingleTickerProvider
                     child: Center(
                       child: Transform.scale(
                         scale: _checkAnimation.value,
-                        child: Icon(
+                        child: const Icon(
                           Icons.check_circle_outline,
                           color: Colors.green,
                           size: 48,
@@ -90,12 +90,12 @@ class _SuccessDialogState extends State<SuccessDialog> with SingleTickerProvider
                       ),
                     ),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Opacity(
                     opacity: _fadeAnimation.value,
                     child: Column(
                       children: [
-                        Text(
+                        const Text(
                           'Berhasil!',
                           style: TextStyle(
                             color: Colors.white,
@@ -103,7 +103,7 @@ class _SuccessDialogState extends State<SuccessDialog> with SingleTickerProvider
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Text(
                           'Produk telah ditambahkan ke keranjang',
                           textAlign: TextAlign.center,
@@ -112,12 +112,12 @@ class _SuccessDialogState extends State<SuccessDialog> with SingleTickerProvider
                             fontSize: 14,
                           ),
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.amber[400],
                             foregroundColor: Colors.black,
-                            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),
@@ -126,7 +126,7 @@ class _SuccessDialogState extends State<SuccessDialog> with SingleTickerProvider
                             Navigator.pop(context); // Close dialog
                             Navigator.pop(context); // Go back to previous screen
                           },
-                          child: Text(
+                          child: const Text(
                             'Kembali',
                             style: TextStyle(
                               fontSize: 16,
@@ -200,7 +200,7 @@ class _ProdukDetailPageState extends State<ProdukDetailPage> {
         await showDialog(
           context: context,
           barrierDismissible: false,
-          builder: (BuildContext context) => SuccessDialog(),
+          builder: (BuildContext context) => const SuccessDialog(),
         );
       }
     } finally {
@@ -215,10 +215,10 @@ class _ProdukDetailPageState extends State<ProdukDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1A1A1A),
+      backgroundColor: const Color(0xFF1A1A1A),
       appBar: AppBar(
         title: Text('Detail Produk', style: TextStyle(color: Colors.amber[400])),
-        backgroundColor: Color(0xFF2D2D2D),
+        backgroundColor: const Color(0xFF2D2D2D),
         iconTheme: IconThemeData(color: Colors.amber[400]),
       ),
       body: SingleChildScrollView(
@@ -265,7 +265,7 @@ class _ProdukDetailPageState extends State<ProdukDetailPage> {
 
                   Text(
                     widget.produk.namaProduk ?? '',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -283,7 +283,7 @@ class _ProdukDetailPageState extends State<ProdukDetailPage> {
                   ),
                   const SizedBox(height: 16),
 
-                  Text(
+                  const Text(
                     'Deskripsi:',
                     style: TextStyle(
                       fontSize: 16,
@@ -301,7 +301,7 @@ class _ProdukDetailPageState extends State<ProdukDetailPage> {
                   ),
                   const SizedBox(height: 24),
 
-                  Text(
+                  const Text(
                     'Sekilas Info:',
                     style: TextStyle(
                       fontSize: 16,
@@ -323,7 +323,7 @@ class _ProdukDetailPageState extends State<ProdukDetailPage> {
 
                   Row(
                     children: [
-                      Text(
+                      const Text(
                         'Stok: ',
                         style: TextStyle(
                           fontSize: 16,
@@ -349,7 +349,7 @@ class _ProdukDetailPageState extends State<ProdukDetailPage> {
       bottomNavigationBar: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: Color(0xFF2D2D2D),
+          color: const Color(0xFF2D2D2D),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.2),
@@ -376,7 +376,7 @@ class _ProdukDetailPageState extends State<ProdukDetailPage> {
                   ),
                   Text(
                     '$quantity',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
                       color: Colors.white,

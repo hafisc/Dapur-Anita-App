@@ -295,9 +295,9 @@ class _KeranjangPageState extends State<KeranjangPage> {
     }
 
     return Scaffold(
-      backgroundColor: Color(0xFF1A1A1A),
+      backgroundColor: const Color(0xFF1A1A1A),
       appBar: AppBar(
-        backgroundColor: Color(0xFF2D2D2D),
+        backgroundColor: const Color(0xFF2D2D2D),
         title: Text(
           'Keranjang',
           style: TextStyle(color: Colors.amber[400]),
@@ -336,7 +336,7 @@ class _KeranjangPageState extends State<KeranjangPage> {
                       itemBuilder: (context, index) {
                         final item = cartItems[index];
                         return Card(
-                          color: Color(0xFF2D2D2D),
+                          color: const Color(0xFF2D2D2D),
                           margin: const EdgeInsets.symmetric(
                             horizontal: 16,
                             vertical: 8,
@@ -379,7 +379,7 @@ class _KeranjangPageState extends State<KeranjangPage> {
                                     children: [
                                       Text(
                                         item.name,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.w500,
                                           color: Colors.white,
@@ -416,8 +416,8 @@ class _KeranjangPageState extends State<KeranjangPage> {
                                             constraints: const BoxConstraints(),
                                           ),
                                           Container(
-                                            margin: EdgeInsets.symmetric(horizontal: 8),
-                                            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                                            margin: const EdgeInsets.symmetric(horizontal: 8),
+                                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                                             decoration: BoxDecoration(
                                               color: Colors.grey[800],
                                               borderRadius: BorderRadius.circular(4),
@@ -425,7 +425,7 @@ class _KeranjangPageState extends State<KeranjangPage> {
                                             ),
                                             child: Text(
                                               '${item.quantity}',
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 16,
                                               ),
@@ -453,7 +453,7 @@ class _KeranjangPageState extends State<KeranjangPage> {
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: Color(0xFF2D2D2D),
+                    color: const Color(0xFF2D2D2D),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withOpacity(0.2),
@@ -474,7 +474,7 @@ class _KeranjangPageState extends State<KeranjangPage> {
                               activeColor: Colors.amber[400],
                               checkColor: Colors.black,
                             ),
-                            Text(
+                            const Text(
                               'Pilih Semua',
                               style: TextStyle(color: Colors.white),
                             ),
@@ -547,7 +547,7 @@ class _KeranjangPageState extends State<KeranjangPage> {
                           ),
                           child: Text(
                             'Beli ($selectedCount)',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontWeight: FontWeight.bold,
                             ),
                           ),

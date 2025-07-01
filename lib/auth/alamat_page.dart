@@ -198,9 +198,9 @@ class _AlamatPageState extends State<AlamatPage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        backgroundColor: Color(0xFF2D2D2D),
-        title: Text("Error", style: TextStyle(color: Colors.white)),
-        content: Text(message, style: TextStyle(color: Colors.white)),
+        backgroundColor: const Color(0xFF2D2D2D),
+        title: const Text("Error", style: TextStyle(color: Colors.white)),
+        content: Text(message, style: const TextStyle(color: Colors.white)),
         actions: [
           TextButton(
             child: Text('OK', style: TextStyle(color: Colors.amber[400])),
@@ -215,9 +215,9 @@ class _AlamatPageState extends State<AlamatPage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        backgroundColor: Color(0xFF2D2D2D),
-        title: Text("Sukses", style: TextStyle(color: Colors.white)),
-        content: Text(message, style: TextStyle(color: Colors.white)),
+        backgroundColor: const Color(0xFF2D2D2D),
+        title: const Text("Sukses", style: TextStyle(color: Colors.white)),
+        content: Text(message, style: const TextStyle(color: Colors.white)),
         actions: [
           TextButton(
             child: Text('OK', style: TextStyle(color: Colors.amber[400])),
@@ -234,9 +234,9 @@ class _AlamatPageState extends State<AlamatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1A1A1A),
+      backgroundColor: const Color(0xFF1A1A1A),
       appBar: AppBar(
-        backgroundColor: Color(0xFF2D2D2D),
+        backgroundColor: const Color(0xFF2D2D2D),
         title: Text(
           widget.cartItems != null ? 'Alamat Pengiriman' : 'Pengaturan Alamat',
           style: TextStyle(color: Colors.amber[400]),
@@ -247,7 +247,7 @@ class _AlamatPageState extends State<AlamatPage> {
         ),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -266,13 +266,13 @@ class _AlamatPageState extends State<AlamatPage> {
                   value: provinsi,
                   child: Text(
                     provinsi['province'],
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
                 );
               }).toList(),
               onChanged: (value) {
                 setState(() {
-                  selectedProvinsi = value as Map<String, dynamic>?;
+                  selectedProvinsi = value;
                   selectedKota = null;
                   if (selectedProvinsi != null) {
                     fetchKota(selectedProvinsi!['province_id'].toString());
@@ -290,7 +290,7 @@ class _AlamatPageState extends State<AlamatPage> {
                   value: kota,
                   child: Text(
                     kota['city_name'],
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
                 );
               }).toList(),
@@ -298,7 +298,7 @@ class _AlamatPageState extends State<AlamatPage> {
                   ? null
                   : (value) {
                       setState(() {
-                        selectedKota = value as Map<String, dynamic>?;
+                        selectedKota = value;
                       });
                     },
             ),
@@ -318,7 +318,7 @@ class _AlamatPageState extends State<AlamatPage> {
               required: true,
               maxLines: 3,
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             SizedBox(
               width: double.infinity,
               height: 48,
@@ -332,7 +332,7 @@ class _AlamatPageState extends State<AlamatPage> {
                   ),
                 ),
                 child: isLoading
-                    ? SizedBox(
+                    ? const SizedBox(
                         width: 24,
                         height: 24,
                         child: CircularProgressIndicator(
@@ -340,7 +340,7 @@ class _AlamatPageState extends State<AlamatPage> {
                           strokeWidth: 2,
                         ),
                       )
-                    : Text(
+                    : const Text(
                         'Simpan Alamat',
                         style: TextStyle(
                           fontSize: 16,
@@ -370,14 +370,14 @@ class _AlamatPageState extends State<AlamatPage> {
           children: [
             Text(
               label,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
               ),
             ),
             if (required)
-              Text(
+              const Text(
                 ' *',
                 style: TextStyle(
                   color: Colors.red,
@@ -387,7 +387,7 @@ class _AlamatPageState extends State<AlamatPage> {
               ),
           ],
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Container(
           decoration: BoxDecoration(
             color: Colors.grey[900],
@@ -397,7 +397,7 @@ class _AlamatPageState extends State<AlamatPage> {
           child: isLoading
               ? Center(
                   child: Padding(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     child: CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(Colors.amber[400]!),
                     ),
@@ -409,7 +409,7 @@ class _AlamatPageState extends State<AlamatPage> {
                   dropdownColor: Colors.grey[900],
                   underline: Container(),
                   hint: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 12),
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
                     child: Text(
                       'Pilih $label',
                       style: TextStyle(color: Colors.grey[400]),
@@ -417,10 +417,10 @@ class _AlamatPageState extends State<AlamatPage> {
                   ),
                   items: items,
                   onChanged: onChanged,
-                  padding: EdgeInsets.symmetric(horizontal: 12),
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
                 ),
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
       ],
     );
   }
@@ -439,14 +439,14 @@ class _AlamatPageState extends State<AlamatPage> {
           children: [
             Text(
               label,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
               ),
             ),
             if (required)
-              Text(
+              const Text(
                 ' *',
                 style: TextStyle(
                   color: Colors.red,
@@ -456,10 +456,10 @@ class _AlamatPageState extends State<AlamatPage> {
               ),
           ],
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         TextFormField(
           controller: controller,
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
           keyboardType: keyboardType,
           maxLines: maxLines,
           decoration: InputDecoration(
@@ -479,7 +479,7 @@ class _AlamatPageState extends State<AlamatPage> {
             ),
           ),
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
       ],
     );
   }

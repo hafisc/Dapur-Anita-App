@@ -148,12 +148,12 @@ class _PaymentUploadPageState extends State<PaymentUploadPage> {
           context: context,
           barrierDismissible: false,
           builder: (context) => AlertDialog(
-            backgroundColor: Color(0xFF2D2D2D),
-            title: Text(
+            backgroundColor: const Color(0xFF2D2D2D),
+            title: const Text(
               'Pembayaran Berhasil',
               style: TextStyle(color: Colors.white),
             ),
-            content: Text(
+            content: const Text(
               'Pesanan Anda sedang diproses',
               style: TextStyle(color: Colors.white),
             ),
@@ -190,9 +190,9 @@ class _PaymentUploadPageState extends State<PaymentUploadPage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        backgroundColor: Color(0xFF2D2D2D),
-        title: Text('Error', style: TextStyle(color: Colors.white)),
-        content: Text(message, style: TextStyle(color: Colors.white)),
+        backgroundColor: const Color(0xFF2D2D2D),
+        title: const Text('Error', style: TextStyle(color: Colors.white)),
+        content: Text(message, style: const TextStyle(color: Colors.white)),
         actions: [
           TextButton(
             child: Text('OK', style: TextStyle(color: Colors.amber[400])),
@@ -213,7 +213,7 @@ class _PaymentUploadPageState extends State<PaymentUploadPage> {
             color: Colors.amber[400],
             size: 48,
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(
             'Pilih Foto',
             style: TextStyle(
@@ -237,7 +237,7 @@ class _PaymentUploadPageState extends State<PaymentUploadPage> {
         }
         
         if (snapshot.hasError) {
-          return Center(
+          return const Center(
             child: Text(
               'Error loading image',
               style: TextStyle(color: Colors.white),
@@ -260,9 +260,9 @@ class _PaymentUploadPageState extends State<PaymentUploadPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1A1A1A),
+      backgroundColor: const Color(0xFF1A1A1A),
       appBar: AppBar(
-        backgroundColor: Color(0xFF2D2D2D),
+        backgroundColor: const Color(0xFF2D2D2D),
         title: Text(
           'Upload Bukti Pembayaran',
           style: TextStyle(color: Colors.amber[400]),
@@ -273,11 +273,11 @@ class _PaymentUploadPageState extends State<PaymentUploadPage> {
         ),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Detail Pembayaran:',
               style: TextStyle(
                 color: Colors.white,
@@ -285,17 +285,17 @@ class _PaymentUploadPageState extends State<PaymentUploadPage> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text(
               'Harga Produk: Rp${widget.totalPrice}',
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
               ),
             ),
             Text(
               'Ongkir (12%): Rp$ongkir',
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
               ),
@@ -308,8 +308,8 @@ class _PaymentUploadPageState extends State<PaymentUploadPage> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 32),
-            Text(
+            const SizedBox(height: 32),
+            const Text(
               'Upload Bukti Pembayaran',
               style: TextStyle(
                 color: Colors.white,
@@ -317,7 +317,7 @@ class _PaymentUploadPageState extends State<PaymentUploadPage> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             GestureDetector(
               onTap: _pickImage,
               child: Container(
@@ -334,7 +334,7 @@ class _PaymentUploadPageState extends State<PaymentUploadPage> {
                 ),
               ),
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             SizedBox(
               width: double.infinity,
               height: 48,
@@ -348,7 +348,7 @@ class _PaymentUploadPageState extends State<PaymentUploadPage> {
                   ),
                 ),
                 child: isLoading
-                    ? SizedBox(
+                    ? const SizedBox(
                         width: 24,
                         height: 24,
                         child: CircularProgressIndicator(
@@ -356,7 +356,7 @@ class _PaymentUploadPageState extends State<PaymentUploadPage> {
                           strokeWidth: 2,
                         ),
                       )
-                    : Text(
+                    : const Text(
                         'Upload Bukti Pembayaran',
                         style: TextStyle(
                           fontSize: 16,

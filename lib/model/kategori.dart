@@ -18,12 +18,12 @@ createdAt = json['created_at'];
 updatedAt = json['updated_at'];
 }
 Map<String, dynamic> toJson() {
-final Map<String, dynamic> data = new Map<String, dynamic>();
-data['id_kategori'] = this.idKategori;
-data['nama_kategori'] = this.namaKategori;
-data['deskripsi_kategori'] = this.deskripsiKategori;
-data['created_at'] = this.createdAt;
-data['updated_at'] = this.updatedAt;
+final Map<String, dynamic> data = <String, dynamic>{};
+data['id_kategori'] = idKategori;
+data['nama_kategori'] = namaKategori;
+data['deskripsi_kategori'] = deskripsiKategori;
+data['created_at'] = createdAt;
+data['updated_at'] = updatedAt;
 return data;
 }
 }

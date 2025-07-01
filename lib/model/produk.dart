@@ -39,18 +39,18 @@ class produk {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id_produk'] = this.idProduk;
-    data['nama_produk'] = this.namaProduk;
-    data['id_kategori'] = this.idKategori;
-    data['berat'] = this.berat;
-    data['stok'] = this.stok;
-    data['harga_produk'] = this.hargaProduk;
-    data['deskripsi_produk'] = this.deskripsiProduk;
-    data['foto_produk'] = this.fotoProduk;
-    data['created_at'] = this.createdAt;
-    data['updated_at'] = this.updatedAt;
-    data['nama_kategori'] = this.namaKategori;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id_produk'] = idProduk;
+    data['nama_produk'] = namaProduk;
+    data['id_kategori'] = idKategori;
+    data['berat'] = berat;
+    data['stok'] = stok;
+    data['harga_produk'] = hargaProduk;
+    data['deskripsi_produk'] = deskripsiProduk;
+    data['foto_produk'] = fotoProduk;
+    data['created_at'] = createdAt;
+    data['updated_at'] = updatedAt;
+    data['nama_kategori'] = namaKategori;
     return data;
   }
 }

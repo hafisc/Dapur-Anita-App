@@ -78,14 +78,14 @@ class _EditProfilPageState extends State<EditProfilPage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        backgroundColor: Color(0xFF2D2D2D),
-        title: Text('Pilih Sumber Foto', style: TextStyle(color: Colors.white)),
+        backgroundColor: const Color(0xFF2D2D2D),
+        title: const Text('Pilih Sumber Foto', style: TextStyle(color: Colors.white)),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
               leading: Icon(Icons.camera_alt, color: Colors.amber[400]),
-              title: Text('Kamera', style: TextStyle(color: Colors.white)),
+              title: const Text('Kamera', style: TextStyle(color: Colors.white)),
               onTap: () {
                 Navigator.pop(context);
                 _pickImage(ImageSource.camera);
@@ -93,7 +93,7 @@ class _EditProfilPageState extends State<EditProfilPage> {
             ),
             ListTile(
               leading: Icon(Icons.photo_library, color: Colors.amber[400]),
-              title: Text('Galeri', style: TextStyle(color: Colors.white)),
+              title: const Text('Galeri', style: TextStyle(color: Colors.white)),
               onTap: () {
                 Navigator.pop(context);
                 _pickImage(ImageSource.gallery);
@@ -232,11 +232,11 @@ class _EditProfilPageState extends State<EditProfilPage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text("Error"),
+        title: const Text("Error"),
         content: Text(message),
         actions: [
           TextButton(
-            child: Text('OK'),
+            child: const Text('OK'),
             onPressed: () => Navigator.pop(context),
           ),
         ],
@@ -248,11 +248,11 @@ class _EditProfilPageState extends State<EditProfilPage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text("Sukses"),
+        title: const Text("Sukses"),
         content: Text(message),
         actions: [
           TextButton(
-            child: Text('OK'),
+            child: const Text('OK'),
             onPressed: () {
               Navigator.pop(context); // Close dialog
               Navigator.pop(context); // Return to profile page
@@ -266,9 +266,9 @@ class _EditProfilPageState extends State<EditProfilPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1A1A1A),
+      backgroundColor: const Color(0xFF1A1A1A),
       appBar: AppBar(
-        backgroundColor: Color(0xFF2D2D2D),
+        backgroundColor: const Color(0xFF2D2D2D),
         title: Text(
           'Edit Profil',
           style: TextStyle(color: Colors.amber[400]),
@@ -279,7 +279,7 @@ class _EditProfilPageState extends State<EditProfilPage> {
         ),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -306,12 +306,12 @@ class _EditProfilPageState extends State<EditProfilPage> {
                     child: GestureDetector(
                       onTap: _showImageSourceDialog,
                       child: Container(
-                        padding: EdgeInsets.all(4),
+                        padding: const EdgeInsets.all(4),
                         decoration: BoxDecoration(
                           color: Colors.amber[400],
                           shape: BoxShape.circle,
                         ),
-                        child: Icon(
+                        child: const Icon(
                           Icons.camera_alt,
                           size: 20,
                           color: Colors.black,
@@ -322,8 +322,8 @@ class _EditProfilPageState extends State<EditProfilPage> {
                 ],
               ),
             ),
-            SizedBox(height: 32),
-            Text(
+            const SizedBox(height: 32),
+            const Text(
               'Nama Lengkap',
               style: TextStyle(
                 color: Colors.white,
@@ -331,10 +331,10 @@ class _EditProfilPageState extends State<EditProfilPage> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             TextFormField(
               controller: nameController,
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 filled: true,
                 fillColor: Colors.grey[900],
@@ -352,8 +352,8 @@ class _EditProfilPageState extends State<EditProfilPage> {
                 ),
               ),
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Email',
               style: TextStyle(
                 color: Colors.white,
@@ -361,10 +361,10 @@ class _EditProfilPageState extends State<EditProfilPage> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             TextFormField(
               controller: emailController,
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 filled: true,
                 fillColor: Colors.grey[900],
@@ -382,8 +382,8 @@ class _EditProfilPageState extends State<EditProfilPage> {
                 ),
               ),
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Nomor Telepon',
               style: TextStyle(
                 color: Colors.white,
@@ -391,10 +391,10 @@ class _EditProfilPageState extends State<EditProfilPage> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             TextFormField(
               controller: phoneController,
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 filled: true,
                 fillColor: Colors.grey[900],
@@ -413,7 +413,7 @@ class _EditProfilPageState extends State<EditProfilPage> {
               ),
               keyboardType: TextInputType.phone,
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             SizedBox(
               width: double.infinity,
               height: 48,
@@ -427,7 +427,7 @@ class _EditProfilPageState extends State<EditProfilPage> {
                   ),
                 ),
                 child: isLoading
-                    ? SizedBox(
+                    ? const SizedBox(
                         width: 24,
                         height: 24,
                         child: CircularProgressIndicator(
@@ -435,7 +435,7 @@ class _EditProfilPageState extends State<EditProfilPage> {
                           strokeWidth: 2,
                         ),
                       )
-                    : Text(
+                    : const Text(
                         'Simpan Perubahan',
                         style: TextStyle(
                           fontSize: 16,

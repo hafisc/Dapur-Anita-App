@@ -46,9 +46,9 @@ class _ProfilPageState extends State<ProfilPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1A1A1A),
+      backgroundColor: const Color(0xFF1A1A1A),
       appBar: AppBar(
-        backgroundColor: Color(0xFF2D2D2D),
+        backgroundColor: const Color(0xFF2D2D2D),
         title: Text(
           'Profil Saya',
           style: TextStyle(color: Colors.amber[400]),
@@ -62,8 +62,8 @@ class _ProfilPageState extends State<ProfilPage> {
         child: Column(
           children: [
             Container(
-              color: Color(0xFF2D2D2D),
-              padding: EdgeInsets.all(20),
+              color: const Color(0xFF2D2D2D),
+              padding: const EdgeInsets.all(20),
               child: Row(
                 children: [
                   Container(
@@ -95,20 +95,20 @@ class _ProfilPageState extends State<ProfilPage> {
                             ),
                     ),
                   ),
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           name ?? 'Nama Pengguna',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
                         ),
-                        SizedBox(height: 4),
+                        const SizedBox(height: 4),
                         Text(
                           email ?? 'email@example.com',
                           style: TextStyle(
@@ -121,7 +121,7 @@ class _ProfilPageState extends State<ProfilPage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _buildMenuSection(
               title: 'Akun Saya',
               items: [
@@ -153,7 +153,7 @@ class _ProfilPageState extends State<ProfilPage> {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _buildMenuSection(
               title: 'Pengaturan',
               items: [
@@ -189,16 +189,16 @@ class _ProfilPageState extends State<ProfilPage> {
 
   Widget _buildMenuSection({required String title, required List<Widget> items}) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
-        color: Color(0xFF2D2D2D),
+        color: const Color(0xFF2D2D2D),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             child: Text(
               title,
               style: TextStyle(
@@ -223,7 +223,7 @@ class _ProfilPageState extends State<ProfilPage> {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         decoration: BoxDecoration(
           border: Border(
             top: BorderSide(
@@ -235,7 +235,7 @@ class _ProfilPageState extends State<ProfilPage> {
         child: Row(
           children: [
             Container(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                 color: color.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(8),
@@ -246,11 +246,11 @@ class _ProfilPageState extends State<ProfilPage> {
                 size: 24,
               ),
             ),
-            SizedBox(width: 16),
+            const SizedBox(width: 16),
             Expanded(
               child: Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 16,
                 ),

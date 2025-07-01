@@ -62,9 +62,9 @@ class _PesananPageState extends State<PesananPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1A1A1A),
+      backgroundColor: const Color(0xFF1A1A1A),
       appBar: AppBar(
-        backgroundColor: Color(0xFF2D2D2D),
+        backgroundColor: const Color(0xFF2D2D2D),
         automaticallyImplyLeading: false,
         title: Text(
           'Pesanan Saya',
@@ -74,16 +74,16 @@ class _PesananPageState extends State<PesananPage> {
       body: Column(
         children: [
           Container(
-            color: Color(0xFF2D2D2D),
-            padding: EdgeInsets.symmetric(vertical: 8),
+            color: const Color(0xFF2D2D2D),
+            padding: const EdgeInsets.symmetric(vertical: 8),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children: statusFilters.map((status) {
                   bool isSelected = selectedStatus == status;
                   return Padding(
-                    padding: EdgeInsets.only(right: 8),
+                    padding: const EdgeInsets.only(right: 8),
                     child: FilterChip(
                       selected: isSelected,
                       label: Text(status),
@@ -93,7 +93,7 @@ class _PesananPageState extends State<PesananPage> {
                           // TODO: Implement filter logic
                         });
                       },
-                      backgroundColor: Color(0xFF1A1A1A),
+                      backgroundColor: const Color(0xFF1A1A1A),
                       selectedColor: Colors.amber[400],
                       checkmarkColor: Colors.black,
                       labelStyle: TextStyle(
@@ -121,19 +121,19 @@ class _PesananPageState extends State<PesananPage> {
                 : pesananList.isEmpty
                     ? _buildEmptyPesananView()
                     : ListView.builder(
-                        padding: EdgeInsets.all(16),
+                        padding: const EdgeInsets.all(16),
                         itemCount: pesananList.length,
                         itemBuilder: (context, index) {
                           final pesanan = pesananList[index];
                           return Card(
-                            color: Color(0xFF2D2D2D),
-                            margin: EdgeInsets.only(bottom: 12),
+                            color: const Color(0xFF2D2D2D),
+                            margin: const EdgeInsets.only(bottom: 12),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                               side: BorderSide(color: Colors.amber[400]!.withOpacity(0.5)),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(16),
+                              padding: const EdgeInsets.all(16),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -142,7 +142,7 @@ class _PesananPageState extends State<PesananPage> {
                                     children: [
                                       Text(
                                         'Pesanan #${pesanan['id_pesanan']}',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -159,7 +159,7 @@ class _PesananPageState extends State<PesananPage> {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  SizedBox(height: 8),
+                                  const SizedBox(height: 8),
                                   Text(
                                     'Tanggal: ${pesanan['tanggal_pesanan']}',
                                     style: TextStyle(color: Colors.grey[400]),
@@ -199,7 +199,7 @@ class _PesananPageState extends State<PesananPage> {
     }
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
         color: chipColor.withOpacity(0.2),
         borderRadius: BorderRadius.circular(12),
@@ -226,8 +226,8 @@ class _PesananPageState extends State<PesananPage> {
             size: 100,
             color: Colors.amber[400],
           ),
-          SizedBox(height: 16),
-          Text(
+          const SizedBox(height: 16),
+          const Text(
             'Belum Ada Pesanan',
             style: TextStyle(
               fontSize: 18,
@@ -235,7 +235,7 @@ class _PesananPageState extends State<PesananPage> {
               color: Colors.white,
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(
             'Hanya pesanan yang kamu buat\ndalam 1 tahun terakhir yang muncul di sini',
             textAlign: TextAlign.center,

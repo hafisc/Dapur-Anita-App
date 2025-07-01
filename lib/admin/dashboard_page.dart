@@ -123,9 +123,9 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
               color: Colors.red[400],
               size: 60,
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Padding(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Text(
                 errorMessage,
                 style: TextStyle(color: Colors.red[400]),
@@ -138,7 +138,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                 foregroundColor: Colors.black,
               ),
               onPressed: fetchDashboardData,
-              child: Text('Coba Lagi'),
+              child: const Text('Coba Lagi'),
             ),
           ],
         ),
@@ -149,8 +149,8 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
       onRefresh: fetchDashboardData,
       color: Colors.amber[400],
       child: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
-        physics: AlwaysScrollableScrollPhysics(),
+        padding: const EdgeInsets.all(16),
+        physics: const AlwaysScrollableScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -160,7 +160,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
               mainAxisSpacing: 16,
               childAspectRatio: 1.5,
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               children: [
                 _buildNewStatCard(
                   'Pengguna Terdaftar',
@@ -192,7 +192,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
 
   Widget _buildNewStatCard(String title, String value, IconData icon) {
     return Container(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
@@ -200,7 +200,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
             blurRadius: 4,
-            offset: Offset(0, 2),
+            offset: const Offset(0, 2),
           ),
         ],
       ),
@@ -210,7 +210,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
         children: [
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black87,
               fontSize: 14,
               fontWeight: FontWeight.w500,
@@ -221,7 +221,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
             children: [
               Text(
                 value,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.black,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -269,7 +269,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
       if (response.statusCode == 200) {
         if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             content: Text('Produk berhasil dihapus'),
             backgroundColor: Colors.green,
           ),
@@ -298,9 +298,9 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
       _buildDashboardContent(),
       const PesananAdminPage(),
       Scaffold(
-        backgroundColor: Color(0xFF1A1A1A),
+        backgroundColor: const Color(0xFF1A1A1A),
         appBar: AppBar(
-          backgroundColor: Color(0xFF2D2D2D),
+          backgroundColor: const Color(0xFF2D2D2D),
           automaticallyImplyLeading: false,
           title: Text(
             'Kelola Produk',
@@ -309,12 +309,12 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.amber[400],
-          child: Icon(Icons.add, color: Colors.black),
+          child: const Icon(Icons.add, color: Colors.black),
           onPressed: () {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => TambahProdukPage(),
+                builder: (context) => const TambahProdukPage(),
               ),
             ).then((_) {
               // Refresh data when returning from TambahProdukPage
@@ -359,21 +359,21 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                 );
               }
               return ListView.builder(
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 itemCount: snapshot.data!.length,
                 itemBuilder: (context, index) {
                   var produk = snapshot.data![index];
                   return Container(
-                    margin: EdgeInsets.only(bottom: 12),
+                    margin: const EdgeInsets.only(bottom: 12),
                     decoration: BoxDecoration(
-                      color: Color(0xFF2D2D2D),
+                      color: const Color(0xFF2D2D2D),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: ListTile(
-                      contentPadding: EdgeInsets.all(16),
+                      contentPadding: const EdgeInsets.all(16),
                       title: Text(
                         produk.namaProduk.toString(),
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -418,8 +418,8 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                               showDialog(
                                 context: context,
                                 builder: (context) => AlertDialog(
-                                  backgroundColor: Color(0xFF2D2D2D),
-                                  title: Text(
+                                  backgroundColor: const Color(0xFF2D2D2D),
+                                  title: const Text(
                                     'Hapus Produk',
                                     style: TextStyle(color: Colors.white),
                                   ),
@@ -464,9 +464,9 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
     ];
 
     return Scaffold(
-      backgroundColor: Color(0xFF1A1A1A),
+      backgroundColor: const Color(0xFF1A1A1A),
       appBar: _selectedIndex == 2 ? null : AppBar(
-        backgroundColor: Color(0xFF2D2D2D),
+        backgroundColor: const Color(0xFF2D2D2D),
         automaticallyImplyLeading: false,
         title: Text(
           _selectedIndex == 0 ? 'Dashboard Admin' :
@@ -484,7 +484,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
       ),
       body: pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color(0xFF2D2D2D),
+        backgroundColor: const Color(0xFF2D2D2D),
         selectedItemColor: Colors.amber[400],
         unselectedItemColor: Colors.grey[400],
         currentIndex: _selectedIndex,
@@ -494,7 +494,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
             _selectedIndex = index;
           });
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.dashboard_outlined),
             activeIcon: Icon(Icons.dashboard),

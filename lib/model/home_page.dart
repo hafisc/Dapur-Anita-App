@@ -68,9 +68,9 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     final List<Widget> pages = [
       // Beranda (Home)
       Scaffold(
-        backgroundColor: Color(0xFF1A1A1A),
+        backgroundColor: const Color(0xFF1A1A1A),
         appBar: AppBar(
-          backgroundColor: Color(0xFF2D2D2D),
+          backgroundColor: const Color(0xFF2D2D2D),
           automaticallyImplyLeading: false,
           title: Container(
             height: 40,
@@ -81,9 +81,9 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             ),
             child: TextField(
               controller: searchController,
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 border: InputBorder.none,
                 hintText: 'Cari Produk',
                 hintStyle: TextStyle(color: Colors.grey[400]),
@@ -106,7 +106,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           ],
           bottom: TabBar(
             controller: _tabController,
-            tabs: [
+            tabs: const [
               Tab(text: 'Rekomendasi'),
               Tab(text: 'Terlaris'),
               Tab(text: 'Top Rating'),
@@ -132,10 +132,10 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     ];
 
     return Scaffold(
-      backgroundColor: Color(0xFF1A1A1A),
+      backgroundColor: const Color(0xFF1A1A1A),
       body: pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color(0xFF2D2D2D),
+        backgroundColor: const Color(0xFF2D2D2D),
         selectedItemColor: Colors.amber[400],
         unselectedItemColor: Colors.grey[400],
         currentIndex: _selectedIndex,
@@ -145,7 +145,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             _selectedIndex = index;
           });
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Beranda',
@@ -165,7 +165,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
 
   Widget _buildFilterButton(String text, IconData icon) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
         color: Colors.grey[900],
         borderRadius: BorderRadius.circular(20),
@@ -173,8 +173,8 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       ),
       child: Row(
         children: [
-          Text(text, style: TextStyle(color: Colors.white)),
-          SizedBox(width: 4),
+          Text(text, style: const TextStyle(color: Colors.white)),
+          const SizedBox(width: 4),
           Icon(icon, size: 16, color: Colors.amber[400]),
         ],
       ),
@@ -187,13 +187,13 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return ListView.builder(
-            padding: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             itemCount: snapshot.data!.length,
             itemBuilder: (context, index) {
               var produk = snapshot.data![index];
               return Card(
                 color: Colors.grey[900],
-                margin: EdgeInsets.only(bottom: 12),
+                margin: const EdgeInsets.only(bottom: 12),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                   side: BorderSide(color: Colors.amber[400]!.withOpacity(0.5)),
@@ -208,7 +208,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                     );
                   },
                   child: Padding(
-                    padding: EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -218,13 +218,13 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                             children: [
                               Text(
                                 produk.namaProduk.toString(),
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                 ),
                               ),
-                              SizedBox(height: 4),
+                              const SizedBox(height: 4),
                               Text(
                                 "Rp ${produk.hargaProduk}",
                                 style: TextStyle(
@@ -233,7 +233,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              SizedBox(height: 4),
+                              const SizedBox(height: 4),
                               Text(
                                 "Stok: ${produk.stok}",
                                 style: TextStyle(
@@ -274,7 +274,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           return Center(
             child: Text(
               '${snapshot.error}',
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
             ),
           );
         }

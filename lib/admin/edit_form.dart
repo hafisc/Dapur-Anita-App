@@ -131,12 +131,12 @@ class _EditFormState extends State<EditForm> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(Icons.error_outline, color: Colors.amber[400], size: 48),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     'Gagal memuat gambar',
                     style: TextStyle(color: Colors.amber[400]),
                   ),
-                  SizedBox(height: 4),
+                  const SizedBox(height: 4),
                   Text(
                     'Tap untuk memilih gambar baru',
                     style: TextStyle(color: Colors.grey[400], fontSize: 12),
@@ -164,8 +164,8 @@ class _EditFormState extends State<EditForm> {
                 color: Colors.black.withOpacity(0.5),
                 borderRadius: BorderRadius.circular(4),
               ),
-              padding: EdgeInsets.all(4),
-              child: Text(
+              padding: const EdgeInsets.all(4),
+              child: const Text(
                 'Tap untuk mengubah',
                 style: TextStyle(
                   color: Colors.white,
@@ -183,12 +183,12 @@ class _EditFormState extends State<EditForm> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(Icons.cloud_upload, color: Colors.amber[400], size: 48),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(
             'Upload Foto Produk',
             style: TextStyle(color: Colors.amber[400]),
           ),
-          SizedBox(height: 4),
+          const SizedBox(height: 4),
           Text(
             'Tap untuk memilih gambar',
             style: TextStyle(color: Colors.grey[400], fontSize: 12),
@@ -214,8 +214,8 @@ class _EditFormState extends State<EditForm> {
                 color: Colors.black.withOpacity(0.5),
                 borderRadius: BorderRadius.circular(4),
               ),
-              padding: EdgeInsets.all(4),
-              child: Text(
+              padding: const EdgeInsets.all(4),
+              child: const Text(
                 'Gambar baru dipilih',
                 style: TextStyle(
                   color: Colors.white,
@@ -245,8 +245,8 @@ class _EditFormState extends State<EditForm> {
                 color: Colors.black.withOpacity(0.5),
                 borderRadius: BorderRadius.circular(4),
               ),
-              padding: EdgeInsets.all(4),
-              child: Text(
+              padding: const EdgeInsets.all(4),
+              child: const Text(
                 'Gambar baru dipilih',
                 style: TextStyle(
                   color: Colors.white,
@@ -259,7 +259,7 @@ class _EditFormState extends State<EditForm> {
       );
     }
 
-    return SizedBox();
+    return const SizedBox();
   }
 
   Future<void> updateData() async {
@@ -322,28 +322,28 @@ class _EditFormState extends State<EditForm> {
             return Dialog(
               backgroundColor: Colors.transparent,
               child: Container(
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: Color(0xFF2D2D2D),
+                  color: const Color(0xFF2D2D2D),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
-                      padding: EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
                         color: Colors.green.withOpacity(0.1),
                         shape: BoxShape.circle,
                       ),
-                      child: Icon(
+                      child: const Icon(
                         Icons.check_circle_outline,
                         color: Colors.green,
                         size: 48,
                       ),
                     ),
-                    SizedBox(height: 16),
-                    Text(
+                    const SizedBox(height: 16),
+                    const Text(
                       'Berhasil!',
                       style: TextStyle(
                         color: Colors.white,
@@ -351,7 +351,7 @@ class _EditFormState extends State<EditForm> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(
                       'Produk berhasil diperbarui',
                       textAlign: TextAlign.center,
@@ -360,12 +360,12 @@ class _EditFormState extends State<EditForm> {
                         fontSize: 14,
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.amber[400],
                         foregroundColor: Colors.black,
-                        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -374,7 +374,7 @@ class _EditFormState extends State<EditForm> {
                         Navigator.pop(context); // Close dialog
                         Navigator.pop(context, true); // Return to previous screen with refresh flag
                       },
-                      child: Text(
+                      child: const Text(
                         'Kembali',
                         style: TextStyle(
                           fontSize: 16,
@@ -402,9 +402,9 @@ class _EditFormState extends State<EditForm> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        backgroundColor: Color(0xFF2D2D2D),
-        title: Text('Error', style: TextStyle(color: Colors.white)),
-        content: Text(message, style: TextStyle(color: Colors.white)),
+        backgroundColor: const Color(0xFF2D2D2D),
+        title: const Text('Error', style: TextStyle(color: Colors.white)),
+        content: Text(message, style: const TextStyle(color: Colors.white)),
         actions: [
           TextButton(
             child: Text('OK', style: TextStyle(color: Colors.amber[400])),
@@ -418,9 +418,9 @@ class _EditFormState extends State<EditForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1A1A1A),
+      backgroundColor: const Color(0xFF1A1A1A),
       appBar: AppBar(
-        backgroundColor: Color(0xFF2D2D2D),
+        backgroundColor: const Color(0xFF2D2D2D),
         title: Text(
           'Edit Produk',
           style: TextStyle(color: Colors.amber[400]),
@@ -431,25 +431,25 @@ class _EditFormState extends State<EditForm> {
         ),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Form(
           key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'Edit Data Produk',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 14,
                 ),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               
               // Nama Produk
               TextFormField(
                 controller: namaProdukController,
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                   labelText: 'Nama Produk',
                   labelStyle: TextStyle(color: Colors.amber[400]),
@@ -462,7 +462,7 @@ class _EditFormState extends State<EditForm> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   filled: true,
-                  fillColor: Color(0xFF2D2D2D),
+                  fillColor: const Color(0xFF2D2D2D),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -471,19 +471,19 @@ class _EditFormState extends State<EditForm> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               // Kategori Dropdown
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 12),
+                padding: const EdgeInsets.symmetric(horizontal: 12),
                 decoration: BoxDecoration(
-                  color: Color(0xFF2D2D2D),
+                  color: const Color(0xFF2D2D2D),
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(color: Colors.amber[400]!),
                 ),
                 child: DropdownButtonHideUnderline(
                   child: DropdownButton<KategoriModel>(
-                    dropdownColor: Color(0xFF2D2D2D),
+                    dropdownColor: const Color(0xFF2D2D2D),
                     isExpanded: true,
                     value: selectedKategori,
                     hint: Text(
@@ -497,7 +497,7 @@ class _EditFormState extends State<EditForm> {
                         value: kategori,
                         child: Text(
                           kategori.namaKategori ?? '',
-                          style: TextStyle(color: Colors.white),
+                          style: const TextStyle(color: Colors.white),
                         ),
                       );
                     }).toList(),
@@ -509,7 +509,7 @@ class _EditFormState extends State<EditForm> {
                   ),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               // Stok dan Berat dalam satu row
               Row(
@@ -517,7 +517,7 @@ class _EditFormState extends State<EditForm> {
                   Expanded(
                     child: TextFormField(
                       controller: stokController,
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         labelText: 'Stok Produk',
@@ -531,7 +531,7 @@ class _EditFormState extends State<EditForm> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         filled: true,
-                        fillColor: Color(0xFF2D2D2D),
+                        fillColor: const Color(0xFF2D2D2D),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -541,11 +541,11 @@ class _EditFormState extends State<EditForm> {
                       },
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: TextFormField(
                       controller: beratController,
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         labelText: 'Berat (gram)',
@@ -559,7 +559,7 @@ class _EditFormState extends State<EditForm> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         filled: true,
-                        fillColor: Color(0xFF2D2D2D),
+                        fillColor: const Color(0xFF2D2D2D),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -571,12 +571,12 @@ class _EditFormState extends State<EditForm> {
                   ),
                 ],
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               // Harga Produk
               TextFormField(
                 controller: hargaProdukController,
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   labelText: 'Harga Produk',
@@ -590,7 +590,7 @@ class _EditFormState extends State<EditForm> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   filled: true,
-                  fillColor: Color(0xFF2D2D2D),
+                  fillColor: const Color(0xFF2D2D2D),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -599,12 +599,12 @@ class _EditFormState extends State<EditForm> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               // Deskripsi Produk
               TextFormField(
                 controller: deskripsiController,
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 maxLines: 4,
                 decoration: InputDecoration(
                   labelText: 'Deskripsi Produk',
@@ -618,7 +618,7 @@ class _EditFormState extends State<EditForm> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   filled: true,
-                  fillColor: Color(0xFF2D2D2D),
+                  fillColor: const Color(0xFF2D2D2D),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -627,7 +627,7 @@ class _EditFormState extends State<EditForm> {
                   return null;
                 },
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
 
               // Upload Foto Button
               GestureDetector(
@@ -636,7 +636,7 @@ class _EditFormState extends State<EditForm> {
                   width: double.infinity,
                   height: 200,
                   decoration: BoxDecoration(
-                    color: Color(0xFF2D2D2D),
+                    color: const Color(0xFF2D2D2D),
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(color: Colors.amber[400]!),
                   ),
@@ -646,7 +646,7 @@ class _EditFormState extends State<EditForm> {
                   ),
                 ),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
 
               // Update Button
               SizedBox(
@@ -662,8 +662,8 @@ class _EditFormState extends State<EditForm> {
                     ),
                   ),
                   child: isLoading
-                      ? CircularProgressIndicator(color: Colors.black)
-                      : Text(
+                      ? const CircularProgressIndicator(color: Colors.black)
+                      : const Text(
                           'Update',
                           style: TextStyle(
                             fontSize: 16,

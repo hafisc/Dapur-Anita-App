@@ -39,8 +39,8 @@ class _TokoPageState extends State<TokoPage> with SingleTickerProviderStateMixin
             color: Colors.amber[400],
             size: 60,
           ),
-          SizedBox(height: 16),
-          Text(
+          const SizedBox(height: 16),
+          const Text(
             'Error',
             style: TextStyle(
               color: Colors.white,
@@ -48,9 +48,9 @@ class _TokoPageState extends State<TokoPage> with SingleTickerProviderStateMixin
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 32),
+            padding: const EdgeInsets.symmetric(horizontal: 32),
             child: Text(
               message,
               style: TextStyle(
@@ -60,7 +60,7 @@ class _TokoPageState extends State<TokoPage> with SingleTickerProviderStateMixin
               textAlign: TextAlign.center,
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.amber[400],
@@ -78,7 +78,7 @@ class _TokoPageState extends State<TokoPage> with SingleTickerProviderStateMixin
                 fetchKategori();
               }
             },
-            child: Text('Coba Lagi'),
+            child: const Text('Coba Lagi'),
           ),
         ],
       ),
@@ -88,9 +88,9 @@ class _TokoPageState extends State<TokoPage> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1A1A1A),
+      backgroundColor: const Color(0xFF1A1A1A),
       appBar: AppBar(
-        backgroundColor: Color(0xFF2D2D2D),
+        backgroundColor: const Color(0xFF2D2D2D),
         automaticallyImplyLeading: false,
         title: Container(
           height: 40,
@@ -101,9 +101,9 @@ class _TokoPageState extends State<TokoPage> with SingleTickerProviderStateMixin
           ),
           child: TextField(
             controller: searchController,
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
             decoration: InputDecoration(
-              contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               border: InputBorder.none,
               hintText: 'Cari di Toko',
               hintStyle: TextStyle(color: Colors.grey[400]),
@@ -113,7 +113,7 @@ class _TokoPageState extends State<TokoPage> with SingleTickerProviderStateMixin
         ),
         bottom: TabBar(
           controller: _tabController,
-          tabs: [
+          tabs: const [
             Tab(text: 'Produk'),
             Tab(text: 'Kategori Produk'),
           ],
@@ -154,8 +154,8 @@ class _TokoPageState extends State<TokoPage> with SingleTickerProviderStateMixin
                   color: Colors.amber[400],
                   size: 60,
                 ),
-                SizedBox(height: 16),
-                Text(
+                const SizedBox(height: 16),
+                const Text(
                   'Belum Ada Produk',
                   style: TextStyle(
                     color: Colors.white,
@@ -163,7 +163,7 @@ class _TokoPageState extends State<TokoPage> with SingleTickerProviderStateMixin
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
                   'Produk akan ditampilkan di sini',
                   style: TextStyle(
@@ -177,8 +177,8 @@ class _TokoPageState extends State<TokoPage> with SingleTickerProviderStateMixin
         }
 
         return GridView.builder(
-          padding: EdgeInsets.all(16),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          padding: const EdgeInsets.all(16),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             childAspectRatio: 0.75,
             crossAxisSpacing: 16,
@@ -199,7 +199,7 @@ class _TokoPageState extends State<TokoPage> with SingleTickerProviderStateMixin
                   Container(
                     height: 120,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
+                      borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
                       color: Colors.grey[800],
                     ),
                     child: Center(
@@ -211,13 +211,13 @@ class _TokoPageState extends State<TokoPage> with SingleTickerProviderStateMixin
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           produk.namaProduk.toString(),
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
@@ -225,7 +225,7 @@ class _TokoPageState extends State<TokoPage> with SingleTickerProviderStateMixin
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(height: 4),
+                        const SizedBox(height: 4),
                         Text(
                           "Rp ${produk.hargaProduk}",
                           style: TextStyle(
@@ -234,7 +234,7 @@ class _TokoPageState extends State<TokoPage> with SingleTickerProviderStateMixin
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        SizedBox(height: 4),
+                        const SizedBox(height: 4),
                         Text(
                           "Stok: ${produk.stok}",
                           style: TextStyle(
@@ -276,8 +276,8 @@ class _TokoPageState extends State<TokoPage> with SingleTickerProviderStateMixin
                   color: Colors.amber[400],
                   size: 60,
                 ),
-                SizedBox(height: 16),
-                Text(
+                const SizedBox(height: 16),
+                const Text(
                   'Belum Ada Kategori',
                   style: TextStyle(
                     color: Colors.white,
@@ -285,7 +285,7 @@ class _TokoPageState extends State<TokoPage> with SingleTickerProviderStateMixin
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
                   'Kategori akan ditampilkan di sini',
                   style: TextStyle(
@@ -299,13 +299,13 @@ class _TokoPageState extends State<TokoPage> with SingleTickerProviderStateMixin
         }
 
         return ListView.builder(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           itemCount: snapshot.data!.length,
           itemBuilder: (context, index) {
             var kategori = snapshot.data![index];
             return Card(
               color: Colors.grey[900],
-              margin: EdgeInsets.only(bottom: 12),
+              margin: const EdgeInsets.only(bottom: 12),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
                 side: BorderSide(color: Colors.amber[400]!.withOpacity(0.5)),
@@ -313,7 +313,7 @@ class _TokoPageState extends State<TokoPage> with SingleTickerProviderStateMixin
               child: ListTile(
                 title: Text(
                   kategori['nama_kategori'] ?? '',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 16,
                     fontWeight: FontWeight.bold,

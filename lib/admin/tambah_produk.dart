@@ -153,28 +153,28 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
             return Dialog(
               backgroundColor: Colors.transparent,
               child: Container(
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: Color(0xFF2D2D2D),
+                  color: const Color(0xFF2D2D2D),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
-                      padding: EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
                         color: Colors.green.withOpacity(0.1),
                         shape: BoxShape.circle,
                       ),
-                      child: Icon(
+                      child: const Icon(
                         Icons.check_circle_outline,
                         color: Colors.green,
                         size: 48,
                       ),
                     ),
-                    SizedBox(height: 16),
-                    Text(
+                    const SizedBox(height: 16),
+                    const Text(
                       'Berhasil!',
                       style: TextStyle(
                         color: Colors.white,
@@ -182,7 +182,7 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(
                       'Produk berhasil ditambahkan',
                       textAlign: TextAlign.center,
@@ -191,12 +191,12 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                         fontSize: 14,
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.amber[400],
                         foregroundColor: Colors.black,
-                        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -205,7 +205,7 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                         Navigator.pop(context); // Close dialog
                         Navigator.pop(context, true); // Return to previous screen with refresh flag
                       },
-                      child: Text(
+                      child: const Text(
                         'Kembali',
                         style: TextStyle(
                           fontSize: 16,
@@ -239,7 +239,7 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
             color: Colors.amber[400],
             size: 48,
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(
             'Upload Foto Produk',
             style: TextStyle(
@@ -269,16 +269,16 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
       );
     }
 
-    return SizedBox();
+    return const SizedBox();
   }
 
   void showError(String message) {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        backgroundColor: Color(0xFF2D2D2D),
-        title: Text('Error', style: TextStyle(color: Colors.white)),
-        content: Text(message, style: TextStyle(color: Colors.white)),
+        backgroundColor: const Color(0xFF2D2D2D),
+        title: const Text('Error', style: TextStyle(color: Colors.white)),
+        content: Text(message, style: const TextStyle(color: Colors.white)),
         actions: [
           TextButton(
             child: Text('OK', style: TextStyle(color: Colors.amber[400])),
@@ -292,9 +292,9 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1A1A1A),
+      backgroundColor: const Color(0xFF1A1A1A),
       appBar: AppBar(
-        backgroundColor: Color(0xFF2D2D2D),
+        backgroundColor: const Color(0xFF2D2D2D),
         title: Text(
           'Tambah Barang',
           style: TextStyle(color: Colors.amber[400]),
@@ -305,25 +305,25 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
         ),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Form(
           key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'Mohon Di Perhatikan Baik Baik Pengisian Form Barang',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 14,
                 ),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               
               // Nama Produk
               TextFormField(
                 controller: _namaProdukController,
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                   labelText: 'Nama Produk',
                   labelStyle: TextStyle(color: Colors.amber[400]),
@@ -336,7 +336,7 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   filled: true,
-                  fillColor: Color(0xFF2D2D2D),
+                  fillColor: const Color(0xFF2D2D2D),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -345,19 +345,19 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               // Kategori Dropdown
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 12),
+                padding: const EdgeInsets.symmetric(horizontal: 12),
                 decoration: BoxDecoration(
-                  color: Color(0xFF2D2D2D),
+                  color: const Color(0xFF2D2D2D),
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(color: Colors.amber[400]!),
                 ),
                 child: DropdownButtonHideUnderline(
                   child: DropdownButton<KategoriModel>(
-                    dropdownColor: Color(0xFF2D2D2D),
+                    dropdownColor: const Color(0xFF2D2D2D),
                     isExpanded: true,
                     value: selectedKategori,
                     hint: Text(
@@ -371,7 +371,7 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                         value: kategori,
                         child: Text(
                           kategori.namaKategori ?? '',
-                          style: TextStyle(color: Colors.white),
+                          style: const TextStyle(color: Colors.white),
                         ),
                       );
                     }).toList(),
@@ -383,7 +383,7 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               // Stok dan Berat dalam satu row
               Row(
@@ -391,7 +391,7 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                   Expanded(
                     child: TextFormField(
                       controller: _stokController,
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         labelText: 'Stok Produk',
@@ -405,7 +405,7 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         filled: true,
-                        fillColor: Color(0xFF2D2D2D),
+                        fillColor: const Color(0xFF2D2D2D),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -415,11 +415,11 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                       },
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: TextFormField(
                       controller: _beratController,
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         labelText: 'Berat (gram)',
@@ -433,7 +433,7 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         filled: true,
-                        fillColor: Color(0xFF2D2D2D),
+                        fillColor: const Color(0xFF2D2D2D),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -445,12 +445,12 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                   ),
                 ],
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               // Harga Produk
               TextFormField(
                 controller: _hargaController,
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   labelText: 'Harga Produk',
@@ -464,7 +464,7 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   filled: true,
-                  fillColor: Color(0xFF2D2D2D),
+                  fillColor: const Color(0xFF2D2D2D),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -473,12 +473,12 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               // Deskripsi Produk
               TextFormField(
                 controller: _deskripsiController,
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 maxLines: 4,
                 decoration: InputDecoration(
                   labelText: 'Deskripsi Produk',
@@ -492,7 +492,7 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   filled: true,
-                  fillColor: Color(0xFF2D2D2D),
+                  fillColor: const Color(0xFF2D2D2D),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -501,7 +501,7 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
 
               // Upload Foto Button
               GestureDetector(
@@ -510,7 +510,7 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                   width: double.infinity,
                   height: 200,
                   decoration: BoxDecoration(
-                    color: Color(0xFF2D2D2D),
+                    color: const Color(0xFF2D2D2D),
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(color: Colors.amber[400]!),
                   ),
@@ -520,7 +520,7 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
 
               // Simpan Button
               SizedBox(
@@ -536,8 +536,8 @@ class _TambahProdukPageState extends State<TambahProdukPage> {
                     ),
                   ),
                   child: isLoading
-                      ? CircularProgressIndicator(color: Colors.black)
-                      : Text(
+                      ? const CircularProgressIndicator(color: Colors.black)
+                      : const Text(
                           'Simpan',
                           style: TextStyle(
                             fontSize: 16,
